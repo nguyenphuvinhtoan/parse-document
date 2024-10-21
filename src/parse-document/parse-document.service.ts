@@ -20,8 +20,6 @@ export class ParseDocumentService {
 
   async parseDocument(dto: ParseDocumentDto): Promise<string> {
     try {
-      // If it's a URL, download the file
-
       const localFilePath = path.resolve(
         __dirname,
         '..',
