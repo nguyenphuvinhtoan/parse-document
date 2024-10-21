@@ -4,7 +4,7 @@ import * as https from 'https';
 import * as fs from 'fs';
 import * as path from 'path';
 import { InstructionBuilder } from './instruction-builder';
-import { ParseDocumentDto } from './dtos';
+import { ParseDocumentBodyDto, ParseDocumentResponseDto } from './dtos';
 
 @Injectable()
 export class ParseDocumentService {
@@ -18,7 +18,9 @@ export class ParseDocumentService {
     this.instructionBuilder = new InstructionBuilder();
   }
 
-  async parseDocument(dto: ParseDocumentDto): Promise<string> {
+  async parseDocument(
+    dto: ParseDocumentBodyDto,
+  ): Promise<ParseDocumentResponseDto> {
     try {
       const localFilePath = path.resolve(
         __dirname,
@@ -79,8 +81,12 @@ export class ParseDocumentService {
       // Output text
       const resTxt =
         messages.data[0].content[0].type === 'text'
-          ? messages.data[0].content[0].text.value
+          ? messages.data[0].content[0].text.value.replace(
+              /```json\n|\n```/g,
+              '',
+            )
           : '';
+      const jsonResult = JSON.parse(resTxt);
 
       // Clean up temporary file if it was downloaded
       if (dto.documentUrl.startsWith('http')) {
@@ -91,7 +97,7 @@ export class ParseDocumentService {
         });
       }
 
-      return resTxt;
+      return jsonResult;
     } catch (error) {
       console.error('An error occurred:', error);
       throw error;

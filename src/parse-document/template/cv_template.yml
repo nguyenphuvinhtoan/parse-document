@@ -11,10 +11,10 @@ dateOfBirth: 1990-01-15
 gender: MALE
 
 # International phone code
-phoneCode: "+1"
+phoneCode: '+1'
 
 # Candidate's phone number
-phone: "555-123-4567"
+phone: '555-123-4567'
 
 # Candidate's email address
 email: john.doe@example.com
@@ -70,14 +70,14 @@ workExperiences:
     fromYear: 2014
     toMonth: 12
     toYear: 2016
-    description: Developed and maintained web applications using Java and Spring Framework.
+    description: Developed and maintained web applications using Java and Spring Framework. # Describe the candidate's responsibilities and achievements in this role
   - companyName: Innovative Systems LLC
     position: Senior Software Engineer
     fromMonth: 1
     fromYear: 2017
     toMonth: # Use blank for current job
     toYear: PRESENT # Use PRESENT for current job
-    description: Lead developer for cloud-based microservices architecture using Kotlin and AWS.
+    description: Lead developer for cloud-based microservices architecture using Kotlin and AWS. # Describe the candidate's responsibilities and achievements in this role
 
 # List of candidate's skills
 skills:
