@@ -6,27 +6,16 @@ import {
   HttpStatus,
 } from '@nestjs/common';
 import { ParseDocumentService } from './parse-document.service';
+import { ParseDocumentDto } from './dtos';
 
 @Controller('parse-document')
 export class ParseDocumentController {
   constructor(private readonly parseDocumentService: ParseDocumentService) {}
 
   @Post()
-  async parseDocument(
-    @Body()
-    body: {
-      documentType: string;
-      fileUrl: string;
-      prompt: string;
-    },
-  ) {
+  async parseDocument(@Body() dto: ParseDocumentDto) {
     try {
-      const { documentType, fileUrl, prompt } = body;
-      const result = await this.parseDocumentService.parseDocument(
-        documentType,
-        fileUrl,
-        prompt,
-      );
+      const result = await this.parseDocumentService.parseDocument(dto);
       return { result };
     } catch (error) {
       throw new HttpException(

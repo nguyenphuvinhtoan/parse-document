@@ -4,6 +4,7 @@ import * as https from 'https';
 import * as fs from 'fs';
 import * as path from 'path';
 import { InstructionBuilder } from './instruction-builder';
+import { ParseDocumentDto } from './dtos';
 
 @Injectable()
 export class ParseDocumentService {
@@ -17,11 +18,7 @@ export class ParseDocumentService {
     this.instructionBuilder = new InstructionBuilder();
   }
 
-  async parseDocument(
-    documentType: string,
-    fileUrl: string,
-    prompt: string,
-  ): Promise<string> {
+  async parseDocument(dto: ParseDocumentDto): Promise<string> {
     try {
       // If it's a URL, download the file
 
@@ -32,16 +29,16 @@ export class ParseDocumentService {
         'src',
         'parse-document',
         'tmp',
-        `${documentType}_${Date.now()}.pdf`,
+        `${dto.documentType}_${Date.now()}.pdf`,
       );
-      await this.downloadFile(fileUrl, localFilePath);
+      await this.downloadFile(dto.documentUrl, localFilePath);
 
       // Create PDF assistant
       const pdfAssistant = await this.client.beta.assistants.create({
         model: 'gpt-4o',
-        instructions: this.instructionBuilder.getInstruction(documentType),
+        instructions: this.instructionBuilder.getInstruction(dto.documentType),
         tools: [{ type: 'file_search' }],
-        name: `${documentType.toUpperCase()} Parse Assistant`,
+        name: `${dto.documentType.toUpperCase()} Parse Assistant`,
       });
 
       // Create thread
@@ -56,7 +53,7 @@ export class ParseDocumentService {
       // Create message in thread
       await this.client.beta.threads.messages.create(thread.id, {
         role: 'user',
-        content: prompt,
+        content: dto.prompt,
         attachments: [{ file_id: file.id, tools: [{ type: 'file_search' }] }],
       });
 
@@ -88,7 +85,7 @@ export class ParseDocumentService {
           : '';
 
       // Clean up temporary file if it was downloaded
-      if (fileUrl.startsWith('http')) {
+      if (dto.documentUrl.startsWith('http')) {
         fs.unlink(localFilePath, (err) => {
           if (err) {
             console.error('Error deleting file:', err);
