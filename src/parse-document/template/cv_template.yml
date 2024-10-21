@@ -1,0 +1,96 @@
+# Candidate's first name
+firstName: John
+
+# Candidate's last name
+lastName: Doe
+
+# Candidate's date of birth (YYYY-MM-DD format)
+dateOfBirth: 1990-01-15
+
+# Candidate's gender (MALE, FEMALE, OTHERS)
+gender: MALE
+
+# International phone code
+phoneCode: "+1"
+
+# Candidate's phone number
+phone: "555-123-4567"
+
+# Candidate's email address
+email: john.doe@example.com
+
+# Candidate's current country
+country: United States
+
+# Candidate's current state
+state: California
+
+# Link to candidate's avatar image
+avatar: https://example.com/avatars/johndoe.jpg
+
+# Candidate's current address
+address: 123 Main St, Anytown, CA 12345
+
+# Candidate's job title
+title: Software Engineer
+
+# Link to download the candidate's CV
+cvDownloadUrl: https://example.com/cv/johndoe.pdf
+
+# List of candidate's educational background
+educations:
+  - institution: University of Technology
+    degree: Bachelor of Science in Computer Science
+    fromMonth: 9
+    fromYear: 2008
+    toMonth: 6
+    toYear: 2012
+  - institution: Tech Institute
+    degree: Master of Science in Software Engineering
+    fromMonth: 9
+    fromYear: 2012
+    toMonth: 6
+    toYear: 2014
+
+# List of languages known by the candidate
+languages:
+  - language: English
+    # Proficiency level (BEGINNER, ELEMENTARY, INTERMEDIATE, UPPER_INTERMEDIATE, ADVANCED, FLUENT, NATIVE, CONVERSATIONAL)
+    level: NATIVE
+  - language: Spanish
+    level: INTERMEDIATE
+  - language: French
+    level: BEGINNER
+
+# List of candidate's work experiences
+workExperiences:
+  - companyName: Tech Solutions Inc.
+    position: Junior Software Developer
+    fromMonth: 7
+    fromYear: 2014
+    toMonth: 12
+    toYear: 2016
+    description: Developed and maintained web applications using Java and Spring Framework.
+  - companyName: Innovative Systems LLC
+    position: Senior Software Engineer
+    fromMonth: 1
+    fromYear: 2017
+    toMonth: # Use blank for current job
+    toYear: PRESENT # Use PRESENT for current job
+    description: Lead developer for cloud-based microservices architecture using Kotlin and AWS.
+
+# List of candidate's skills
+skills:
+  - Java
+  - Kotlin
+  - Spring Framework
+  - Cloud Service (AWS, Azure)
+  - Microservices
+  - Docker
+  - Kubernetes
+  - Git
+  - Agile methodologies
+  - Logical thinking and creative
+  - Team Work
+  - Research
+  - Coding (Bash, Python)

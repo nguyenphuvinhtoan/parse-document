@@ -1,0 +1,63 @@
+# Job Details Template
+
+# The title of the job position
+title: "Senior Software Engineer"
+
+# Total years of experience required for the job
+totalYearsOfExperience: 5
+
+# List of required skills for the job
+requiredSkills:
+  - Python
+  - JavaScript (beneficial but not essential)
+  - AWS
+  - Docker
+
+# Country where the job is located
+country: "United States"
+
+# State or region where the job is located
+state: "California"
+
+# Type of employment (e.g., FULL_TIME, PART_TIME, CONTRACT)
+employmentType: "FULL_TIME"
+
+# Minimum salary offered for the position
+minimumSalary: 100000
+
+# Maximum salary offered for the position
+maximumSalary: 150000
+
+# Currency in which the salary is offered
+currency: "USD"
+
+# Indicates if the salary is negotiable (true/false). Default is false.
+isNegotiable: false
+
+# Expected onboarding date for the new hire
+onboardingDate: "2023-09-01"
+
+# Number of open positions for this job
+vacancies: 2
+
+# Reward for qualified candidates (if applicable)
+qualifiedReward: 500
+
+# Reward for candidates who are interviewed (if applicable)
+interviewingReward: 1000
+
+# Detailed description of the job responsibilities and requirements
+description: |
+  We are seeking a talented Senior Software Engineer to join our dynamic team.
+  The ideal candidate will have strong experience in developing scalable web applications
+  and working with cloud technologies. Responsibilities include designing and implementing
+  new features, optimizing existing systems, and collaborating with cross-functional teams.
+
+# Indicates if the job is currently open for applications (true/false). Default is true.
+isHiring: true
+
+# URL for any attachments or additional information related to the job
+attachmentUrl: "https://example.com/job-details.pdf"
+
+# Indicates if the job posting is a draft or ready to be published (true/false). Default is false.
+isDraft: false
