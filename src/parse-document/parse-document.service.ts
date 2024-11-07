@@ -35,7 +35,7 @@ export class ParseDocumentService {
 
       // Create PDF assistant
       const pdfAssistant = await this.client.beta.assistants.create({
-        model: 'gpt-4o',
+        model: 'gpt-4o-mini',
         instructions: this.instructionBuilder.getInstruction(dto.documentType),
         tools: [{ type: 'file_search' }],
         name: `${dto.documentType.toUpperCase()} Parse Assistant`,

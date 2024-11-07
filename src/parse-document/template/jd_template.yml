@@ -1,7 +1,7 @@
 # Job Details Template
 
 # The title of the job position
-title: "Senior Software Engineer"
+title: 'Senior Software Engineer'
 
 # Total years of experience required for the job
 totalYearsOfExperience: 5
@@ -14,13 +14,13 @@ requiredSkills:
   - Docker
 
 # Country where the job is located
-country: "United States"
+country: 'United States'
 
 # State or region where the job is located
-state: "California"
+state: 'California'
 
 # Type of employment (e.g., FULL_TIME, PART_TIME, CONTRACT)
-employmentType: "FULL_TIME"
+employmentType: 'FULL_TIME'
 
 # Minimum salary offered for the position
 minimumSalary: 100000
@@ -29,13 +29,13 @@ minimumSalary: 100000
 maximumSalary: 150000
 
 # Currency in which the salary is offered
-currency: "USD"
+currency: 'USD'
 
-# Indicates if the salary is negotiable (true/false). Default is false.
+# Indicates if the salary is negotiable (true/false). Default is false if not found.
 isNegotiable: false
 
 # Expected onboarding date for the new hire
-onboardingDate: "2023-09-01"
+onboardingDate: '2023-09-01'
 
 # Number of open positions for this job
 vacancies: 2
@@ -53,11 +53,11 @@ description: |
   and working with cloud technologies. Responsibilities include designing and implementing
   new features, optimizing existing systems, and collaborating with cross-functional teams.
 
-# Indicates if the job is currently open for applications (true/false). Default is true.
+# Indicates if the job is currently open for applications (true/false). Default is true if not found.
 isHiring: true
 
 # URL for any attachments or additional information related to the job
-attachmentUrl: "https://example.com/job-details.pdf"
+attachmentUrl: 'https://example.com/job-details.pdf'
 
-# Indicates if the job posting is a draft or ready to be published (true/false). Default is false.
+# Indicates if the job posting is a draft or ready to be published (true/false). Default is false if not found.
 isDraft: false

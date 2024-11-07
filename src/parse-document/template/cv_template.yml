@@ -52,15 +52,12 @@ educations:
     toMonth: 6
     toYear: 2014
 
-# List of languages known by the candidate
+# List of languages known by the candidate. For each language listed in the CV, extract: label in enum values only (ENGLISH, VIETNAMESE) and level: Determine the proficiency level using the LanguageLevel enum values (BASIC, CONVERSATIONAL, WORKING_PROFICIENCY, FLUENT, NATIVE_BILINGUAL)
 languages:
-  - language: English
-    # Proficiency level (BEGINNER, ELEMENTARY, INTERMEDIATE, UPPER_INTERMEDIATE, ADVANCED, FLUENT, NATIVE, CONVERSATIONAL)
-    level: NATIVE
-  - language: Spanish
-    level: INTERMEDIATE
-  - language: French
-    level: BEGINNER
+  - label: English
+    level: NATIVE_BILINGUAL
+  - label: Vietnamese
+    level: FLUENT
 
 # List of candidate's work experiences
 workExperiences:
